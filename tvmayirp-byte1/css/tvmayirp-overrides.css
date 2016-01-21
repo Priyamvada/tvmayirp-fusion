@@ -48,6 +48,20 @@ h3	{
 
 .item-label	{
 	text-align: center;
-	font-family: "Georgia";
+	font-family: "Times";
 	font-style: oblique;
+}
+
+.legend-panel	{
+	text-align: center;
+}
+
+.legend-panel table	{
+	display: inline-table;
+	margin-right: 20px;
+}
+
+.legend-key	{
+	padding-left: 10px;
+	font-size: 11px;
 }
