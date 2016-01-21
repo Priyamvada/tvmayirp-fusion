@@ -1,9 +1,57 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Byte 1 Tutorial</title>
+		<title>Byte 1</title>
+
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/tvmayirp-overrides.css" rel="stylesheet">
 	</head>
 	<body>
-		<h1>Data Pipeline Project Byte 1 Example</h1>
+		<div id="outer-content">
+			<div id="main-header" class="project-header">
+				<h1>Data Pipeline Byte 1</h1>
+			</div>
+			<div class="project-header">
+				<h1>Data Pipeline Byte 1</h1>
+			</div>
+
+
+			<div id="content-panel">
+				<h2>Relation Between DTP3 Immunization and Availability of nursing and Midwifery personnel across countries</h2>
+
+				<p>Immunization is listed by the World Health Organization (WHO) as one of the 8 MGDs (Millenium Development Goals).</p>
+				<h3>The Data</h3>
+
+				<p><b>Map 1</b> shows the percentage of children immunized for one of the most fundamental vaccines viz. Diphtheria Tetanus Toxoid and Pertussis or DTP, which is typically administered to infants within their first year of age. The dataset comprised of immunized percentages between 1980 and 2014. The averge value across countries has increased over time. Also, the variance of this data has decreased. While most commonwealth and developing countries recorded poor levels of DTP vaccination in 1980 starting from 1%(Bangladesh), these nations have improved significantly and come at par with the more affluent nations by 2014. Bangladesh now stands at a healthy 95%. However, there still are a few nations in Central Africa and the Gulf region, that continue to have low rates of DTP immunity. Equatorial Guinea currently records the lowest at 24%.</p>
+
+				<p><b>Map 2</b> shows the availability of nursing and midwifery by country, per thousand citizens. </p> 
+
+				<h3>Visualization</h3>
+				<div id="map-panel">
+					<div class="map-item">
+						<iframe width="500" height="300" scrolling="no" frameborder="yes" src="https://www.google.com/fusiontables/embedviz?q=select+col0+from+117TcZ_HCrAUPGGUY-14zfpiXwd4iqbomohYFfB1d&amp;viz=MAP&amp;h=false&amp;lat=13.379415069493145&amp;lng=15.475135499999961&amp;t=1&amp;z=2&amp;l=col0&amp;y=2&amp;tmplt=2&amp;hml=ONE_COL_LAT_LNG"></iframe>
+						<div class="item-label">MAP 1<br>DTP immunization coverage among 1-year-olds in 2014</div>
+					</div>
+					<div class="map-item">
+						<iframe width="500" height="300" scrolling="no" frameborder="yes" src="https://www.google.com/fusiontables/embedviz?q=select+col0+from+1oTjOLmKWggM0mXibxetUW2Lr0D1DVXhGqeiYDD-g&amp;viz=MAP&amp;h=false&amp;lat=26.047167871296622&amp;lng=23.889277200000038&amp;t=1&amp;z=2&amp;l=col0&amp;y=2&amp;tmplt=2&amp;hml=ONE_COL_LAT_LNG"></iframe>
+						<div class="item-label">MAP 2<br>Latest Nursing and midwifery personnel density (per population of 1000)</div>
+					</div>
+				</div>
+
+				<h2>Acknowledgements</h2>
+				<ul>
+					<li><b>DATASET</b> Diphtheria Tetanus Toxoid and Pertussis (DTP3) and other Immunization between 1980 and 2014 from WHO: <a rel="stylesheet" type="text/css" href="http://apps.who.int/immunization_monitoring/globalsummary/timeseries/tswucoveragebcg.html">http://apps.who.int/immunization_monitoring/globalsummary/timeseries/tswucoveragebcg.html</a></li>
+					<li><b>DATASET</b> Density of Health Professionals (per population of thousand) from WHO: <a href="http://apps.who.int/gho/data/node.main.A1444?lang=en">http://apps.who.int/gho/data/node.main.A1444?lang=en</a></li>
+				</ul>
+
+				<h2>Follow</h2>
+				Source Code on <a href="https://github.com/Priyamvada/tvmayirp-fusion/tree/master/tvmayirp-byte1">GitHub</a>
+
+			</div>
+		</div>
+		
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 	</body>
 </html>
