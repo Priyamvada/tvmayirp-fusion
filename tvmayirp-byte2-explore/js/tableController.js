@@ -1,5 +1,6 @@
 function updateTable(param) {
       button = document.getElementById(param);
+      $(button).toggleClass('selected');
       if (button.className.includes("active")) {
         button.className = "ui basic button";
       } else {
@@ -25,6 +26,7 @@ function updateTable(param) {
         data: JSON.stringify({'cols' : cols}),
         type: 'POST',
         success: function (res, status) {
+
           console.log("successrunning");
           // On Success
           var cols = res["headers"];

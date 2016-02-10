@@ -75,3 +75,7 @@ p.text-note	{
 .summary-plots	{
 	width: 900px;
 }
+.button.active	{
+	background: brown;
+    color: white;
+}
