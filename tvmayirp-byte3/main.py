@@ -37,6 +37,10 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 _INSTANCE_NAME = 'tvmayirp-fusion-mobile-byte3:tvmayirp-byte3-mobiledata'
 _DB_NAME = 'tvmayirp_mobiledata'
 _USER = 'tvmayirp' # or whatever other user account you created
+_CLIENT_IP = '173.194.255.111'
+_LOCALHOST = 'localhost'
+_HOST = _CLIENT_IP
+_PASSWORD = 'root'
 
 
 # the table where activities are logged
@@ -60,10 +64,12 @@ if (os.getenv('SERVER_SOFTWARE') and
                           user=_USER,
                           charset='utf8')
 else:
-    _DB = MySQLdb.connect(host='173.194.255.111',
+    _DB = MySQLdb.connect(
+                          host=_HOST,
                           port=3306,
                           db=_DB_NAME,
                           user=_USER,
+                          passwd=_PASSWORD,
                           charset='utf8')
 
     # Alternatively, connect to a Google Cloud SQL instance using:
