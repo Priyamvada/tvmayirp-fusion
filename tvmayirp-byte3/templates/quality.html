@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,8 +34,9 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
-            <li><a href="/about">About This Data Set</a></li>
-            <li class="active"><a href="/quality">Data Quality</a></li>
+            <li><a href="about">About This Data Set</a></li>
+	          <li  class="active"><a href="quality">Data Quality</a></li>
+            <li><a href="references">References</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -45,28 +46,51 @@
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
-  <h1>Quality: About This Data Set</h1>
-        <p>Write a brief summary about the quality of the data set here</a></p>
+	<h1>Quality of the Data Set</h1>
+        <p>In spite of being sourced from a centralized and highly accountable source i.e. the UN's Word Health Organisation, the data posed significant problems when assessed in terms of completeness, coherence and completeness. These problems arose mainly due to biases during the data collection and labeling phases. These can pose potential problems even prior to the Data Cleansing phase.</a></p>
       </div>
 
     
       <div class="page-header">
-  <h2>Is the data complete?</h2>
-  <p>If not, what is missing and what concerns does it raise?
-  What is your evidence for this?</p>
+	<h2>Completeness</h2>
+	<img class="summary-plots" src="images/Consolidated.png">
+  <p>Figure 1 shows summarized data for all countries available over years for three primary categories within the health workforce-
+    <ol>
+      <li>Presence of Physicians per population of 1000 people</li>
+      <li>Presence of Maternal Health and Midwifery Workforce per population of 1000 people</li>
+      <li>Presence of Pharmaceutical Workforce per population of 1000 people</li>
+    </ol>
+    <strong>Missing Data:</strong> The black points indicate missing data.</p>
+    <p>The data is largely incomplete in the following ways:
+    <ul>
+      <li><strong>Incomplete Years:</strong> The years for which health work-force counts are available are not homogenous. For example, Angola has data only for the years 1997, 2004 and 2007 while India has data recorded continuously over the years starting from 1991 - 2012. Surprisingly Afghanistan data is available from 2013 whereas the United States of America has data recorded only upto 2011.</li>
+      <li><strong>Incomplete Health Worker Types:</strong> Many Health Worker Categories are incomplete in an obvious way, leading to sparse and meaningless data that cannot be used to draw any significant conclusions Eg: Laboratory Health Workers and Pharmaceutical Workers.</li>
+    </ul>
+  </p>
       </div>
       
       <div class="page-header">
-  <h2>Is the data coherent?</h2>
-  <p>Does it make sense relative to itself? Does it match your
-  expectations? Are the distributions sensible? What is your
-  evidence for this?</p>
+	<h2>Coherence</h2>
+	<p>Based on the summarized data for three primary categories within the health workforce, I built the following hypotheses in order to test coherence of the data-</p>
+  <h3>Hypothesis 1: Since the density of physicians is related quality of healthcare available in a region, and the number of maternal health and midwifery is related to better  maternal and child healthcare in a region, hence, the densities of physicians and maternal health workforce must be correlated</h3>
+  <img class="quality-hypothesis-plot" src="images/physician_vs_maternalhealth.png">
+  <p>As seen in the figure 2.1, however, the two are only weakly correlated and have a significant number of outliers (in pink). The missing data points were assigned value -1 and is highlighted in red.</p>
+  <h3>Hypothesis 2: Density of physicians and pharmaceutical workforce must be strongly correlated as both go hand in hand in contributing the quality of healthcare in a region</h3>
+  <img class="quality-hypothesis-plot" src="images/physicians_vs_pharmaceuticals.png">
+  <p>As seen in the figure 2.2, however, the two are not correlated and have a significant number of outliers (in pink). The missing data points were assigned value -1 and is highlighted in red.</p>
+  <h3>Hypothesis 3: We may expect maternal health workforce to be correlated to the workforce within community healthcare, especially in the context of developing and under-developed nations</h3>
+  <img class="quality-hypothesis-plot" src="images/maternal_vs_communityHealth.png">
+  <p>As seen in the figure 2.3, however, the two are not correlated and have a significant number of outliers (in pink). The missing data points were assigned value -1 and is highlighted in red.</p>
       </div>
 
       <div class="page-header">
-  <h2>Is the data correct?</h2>
-  <p>What aspects of this data can you verify? How did you do so? What did
-  you find?</p>
+	<h2>Correctness</h2>
+	<p>A lot of the data is an optimistic or pessimistic estimation applied on data such as headcounts at workplaces and occupational information gathered during censuses (skill level, training, certification, licensing). <a href="references">[2]</a>
+    <ul>
+      <li><strong>Overlapping Categories/Misclassification into workforce categories:</strong> Hence, the classification of health workforce categories, though elaborate, does not necessarily contain accurate numbers. For example, by definition and occupation, the community and traditional health workers may have largely overlapping roles with pharmaceutical and midwifery related workforce. The dataset however, records these as discrete types of workers and treats them mutually exclusive. It counts an individual under only one category and does not account for distinctions such as full-time and half-time.</li>
+      <li><strong>False Negatives:</strong> Since the data is based off surveys and censuses that rely heavily on centralized authorization and work permit metrics and frameworks such as licensing and certification, many countries whose framework and conventions differ from the United Nations will be subject to having a large portion of the health workforce ignored. For example, Denmark has no records of pharmaceutical workers. This is definitely highly improbably and a possible result of the pharmaceutical workers having an overlapping role.</li>
+      <li><strong>False Positives:</strong> Due to non-standard guidelines for categorization of workforce across different countries, many categories for some nations may have a falsely positive run-off from other categories. Eg: Many Community Health Workers being counted under Midwifery in several African/ Asian countries.</li>
+    </ul></p>
       </div>
 
     </div> <!-- /container -->

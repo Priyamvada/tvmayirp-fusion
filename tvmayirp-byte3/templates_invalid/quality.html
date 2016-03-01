@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>Mobile Data Analysis Byte</title>
+    <title>Quality of This Data</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +20,7 @@
 
   <body role="document">
 
-        <!-- Fixed navbar -->
+    <!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -33,10 +33,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="about">About This Data Set</a></li>
-	          <li><a href="quality">Data Quality</a></li>
-            <li><a href="references">References</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About This Data Set</a></li>
+            <li class="active"><a href="/quality">Data Quality</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -46,17 +45,30 @@
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
-	<h1>Data Pipeline Byte 3</h1>
-        <h2>Analysis of personal daya collected over 3 weeks using MS Band and Aware Software <a href="https://github.com/Priyamvada/tvmayirp-fusion/tree/master/tvmayirp-byte3">(GitHub)</a></h2>
+  <h1>Quality: About This Data Set</h1>
+        <p>Write a brief summary about the quality of the data set here</a></p>
       </div>
 
-      <div class = "ui container">
-        
+    
+      <div class="page-header">
+  <h2>Is the data complete?</h2>
+  <p>If not, what is missing and what concerns does it raise?
+  What is your evidence for this?</p>
+      </div>
+      
+      <div class="page-header">
+  <h2>Is the data coherent?</h2>
+  <p>Does it make sense relative to itself? Does it match your
+  expectations? Are the distributions sensible? What is your
+  evidence for this?</p>
       </div>
 
       <div class="page-header">
+  <h2>Is the data correct?</h2>
+  <p>What aspects of this data can you verify? How did you do so? What did
+  you find?</p>
+      </div>
 
-      </div> <!-- /page-header -->
     </div> <!-- /container -->
 
 
@@ -65,6 +77,5 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery-1.12.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
   </body>
 </html>

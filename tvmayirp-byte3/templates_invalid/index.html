@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>Mobile Data Analysis Byte</title>
+    <title>Mobile Byte Tutorial</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -34,9 +34,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="about">About This Data Set</a></li>
-	          <li><a href="quality">Data Quality</a></li>
-            <li><a href="references">References</a></li>
+      <li><a href="quality">Data Quality</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -46,16 +44,28 @@
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
-	<h1>Data Pipeline Byte 3</h1>
-        <h2>Analysis of personal daya collected over 3 weeks using MS Band and Aware Software <a href="https://github.com/Priyamvada/tvmayirp-fusion/tree/master/tvmayirp-byte3">(GitHub)</a></h2>
+  <h1>Data Pipeline Project Mobile Byte Example</h1>
+        <p>This is the Mobile Byte of the Data Pipeline class.</p>
       </div>
 
-      <div class = "ui container">
-        
-      </div>
+   <h2>Query Results</h2>
+   <ul>
+   {% for item in queries %}
+   <li>Query: {{item.query}}<br>
+       {% for row in item.results %}
+          {{row}}<br>
+       {% endfor %}
+   </li>
+   {% endfor %}
 
-      <div class="page-header">
+   <div class="page-header">
+  <p> You should add information here, including some tables
+  and/or charts, telling the reader about the relationship
+    between time and activity in your data.</p>
 
+  <p> You should also add information here, including some tables
+  and/or charts, telling the reader about the relationship
+  between time and location in your data.</p>
       </div> <!-- /page-header -->
     </div> <!-- /container -->
 
@@ -65,6 +75,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery-1.12.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/tableController.js"></script>
 
   </body>
 </html>
