@@ -1,0 +1,175 @@
+@import: 'tvmayirp-theme.less';
+
+
+@navy-blue-dull: #37474f;
+@light-blue-dull: #78909c;
+
+@white: #ffffff;
+@light-grey: #cacaca;
+@dark-grey: #a0a0a0;
+
+@red-highlight: #e06666;
+@turquoise-highlight: #009c9c;
+
+
+
+@headercolor: @navy-blue-dull;
+@headerfocus: @light-blue-dull;
+@headertext: @white;
+@subtitletext: @light-grey;
+
+@linktext: @headerfocus;
+@activelinkbackground: @headertext;
+@activelinktext: @turquoise-highlight;
+
+@contenttext: @headercolor;
+@bordernormal: @headercolor;
+@borderdark: @dark-grey;
+
+
+body	{
+	color: @headerfocus;
+	font-family: 'Oswald', sans-serif;
+}
+#outer-content	{
+	width: 100%;
+	padding-left: 30px;
+	padding-right: 30px;
+	position: absolute;
+	top: 80px;
+}
+#content-panel	{
+}
+
+.project-header	{
+	width: 100%;
+	background-color: @headercolor;
+	border-color: transparent;
+}
+
+.project-header.navbar{
+	min-height: 40px;
+}
+.navbar-inverse.project-header .navbar-toggle	{
+	border-color: transparent;
+	margin: 2px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+.navbar-inverse.project-header	{
+	.navbar-toggle:focus, .navbar-toggle:hover, .icon-bar	{
+		background-color: @headerfocus;
+
+		.icon-bar	{
+			background-color: @headercolor;
+		}
+	}
+
+	.navbar-nav	{
+		li>a	{
+			padding-top: 5px;
+			padding-bottom: 5px;
+			margin-left: 2px;
+			margin-right: 2px;
+			color: @linktext;
+		}
+
+		li>a:focus,li>a:hover	{
+			background-color: @headerfocus;
+			color: @headertext;
+		}
+
+		.active>a, .active>a:focus, .active>a:hover	{
+			background-color: @activelinkbackground;
+			color: @activelinktext;
+		}
+	}
+
+	.navbar-collapse, .navbar-form {
+		border-color: @headerfocus;
+		color: @headertext;
+	}
+}
+
+a.navbar-brand	{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-left: 2px;
+	margin-right: 2px;
+	color: @linktext;
+}
+
+#content-panel .map-item	{
+	display: inline-block;
+	border: @borderdark 1px;
+	padding-right: 10px;
+}
+
+h1	{
+	color: @headertext;
+	font-size: 24px;
+	margin-bottom: 0px;
+	margin-top: 5px;
+}
+
+.page-title h2	{
+	font-size: 100%;
+	font-family: 'Average', serif;
+	color: @subtitletext;
+	margin-bottom: 10px;
+	margin-top: 0px;
+}
+
+#outer-content 	{
+	h2	{
+	}
+
+	.experiment-block	{
+		padding-bottom: 5px;
+		border-bottom: solid @contenttext 1px;
+	}
+
+	h3	{
+		color: @contenttext;
+	}
+
+	h5	{
+		font-family: 'Oswald', sans-serif;
+	}
+
+	.motivation	{
+		font-family: 'Average', serif;
+		color: @contenttext;
+	}
+
+}
+
+h3	{
+	font-size: 18px;
+}
+
+p.text-note	{
+	font-size: 11px;
+}
+
+.item-label	{
+	text-align: center;
+	font-family: "Times";
+	font-style: oblique;
+}
+
+.legend-panel	{
+	text-align: center;
+
+	table	{
+		display: inline-table;
+		margin-right: 20px;
+	}
+}
+
+.legend-key	{
+	padding-left: 10px;
+	font-size: 11px;
+}

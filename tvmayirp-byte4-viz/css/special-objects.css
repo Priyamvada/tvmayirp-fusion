@@ -1,0 +1,36 @@
+.circle-base {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+}
+.red	{
+	background: #dd6666;
+}
+.magenta	{
+	background: #ffaaff;
+}
+.blue	{
+	background: #8888ff;
+}
+.yellow	{
+	background: #ffff11;
+}
+.green	{
+	background: #66ff66;
+}
+
+.panel-default>.panel-heading	{
+	color: #37474f;
+}
+ .panel-body	{
+ 	font-family: 'Average', serif;
+ }
+
+ .image-container	{
+ 	text-align: center;
+ }
+
+ .full-width-media	{
+ 	width: 100%;
+ }

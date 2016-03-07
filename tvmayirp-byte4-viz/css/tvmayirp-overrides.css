@@ -1,0 +1,121 @@
+body {
+  color: #78909c;
+  font-family: 'Oswald', sans-serif;
+}
+#outer-content {
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: absolute;
+  top: 80px;
+}
+.project-header {
+  width: 100%;
+  background-color: #37474f;
+  border-color: transparent;
+}
+.project-header.navbar {
+  min-height: 40px;
+}
+.navbar-inverse.project-header .navbar-toggle {
+  border-color: transparent;
+  margin: 2px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.navbar-inverse.project-header .navbar-toggle:focus,
+.navbar-inverse.project-header .navbar-toggle:hover,
+.navbar-inverse.project-header .icon-bar {
+  background-color: #78909c;
+}
+.navbar-inverse.project-header .navbar-toggle:focus .icon-bar,
+.navbar-inverse.project-header .navbar-toggle:hover .icon-bar,
+.navbar-inverse.project-header .icon-bar .icon-bar {
+  background-color: #37474f;
+}
+.navbar-inverse.project-header .navbar-nav li > a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+  color: #78909c;
+}
+.navbar-inverse.project-header .navbar-nav li > a:focus,
+.navbar-inverse.project-header .navbar-nav li > a:hover {
+  background-color: #78909c;
+  color: #ffffff;
+}
+.navbar-inverse.project-header .navbar-nav .active > a,
+.navbar-inverse.project-header .navbar-nav .active > a:focus,
+.navbar-inverse.project-header .navbar-nav .active > a:hover {
+  background-color: #ffffff;
+  color: #009c9c;
+}
+.navbar-inverse.project-header .navbar-collapse,
+.navbar-inverse.project-header .navbar-form {
+  border-color: #78909c;
+  color: #ffffff;
+}
+a.navbar-brand {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+  color: #78909c;
+}
+#content-panel .map-item {
+  display: inline-block;
+  border: #a0a0a0 1px;
+  padding-right: 10px;
+}
+h1 {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 0px;
+  margin-top: 5px;
+}
+.page-title h2 {
+  font-size: 100%;
+  font-family: 'Average', serif;
+  color: #cacaca;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+#outer-content .experiment-block {
+  padding-bottom: 5px;
+  border-bottom: solid #37474f 1px;
+}
+#outer-content h3 {
+  color: #37474f;
+}
+#outer-content h5 {
+  font-family: 'Oswald', sans-serif;
+}
+#outer-content .motivation {
+  font-family: 'Average', serif;
+  color: #37474f;
+}
+h3 {
+  font-size: 18px;
+}
+p.text-note {
+  font-size: 11px;
+}
+.item-label {
+  text-align: center;
+  font-family: "Times";
+  font-style: oblique;
+}
+.legend-panel {
+  text-align: center;
+}
+.legend-panel table {
+  display: inline-table;
+  margin-right: 20px;
+}
+.legend-key {
+  padding-left: 10px;
+  font-size: 11px;
+}
