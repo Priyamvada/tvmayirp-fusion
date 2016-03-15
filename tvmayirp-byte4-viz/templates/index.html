@@ -8,13 +8,14 @@
 		<link href="css/special-objects.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Average' rel='stylesheet' type='text/css'>
+    <link href="css/globe-styles.css" rel="stylesheet">
 	</head>
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top project-header">
       <div class="container">
       	<div class="page-title">
       		<h1>Byte 4 - Data Visualization</h1>
-      		<h2>05-839 : Collecting, Analyzing And Interacting With Data</h2>
+      		<h2>The Meteoritical Bulletin Database</h2>
       	</div>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -29,7 +30,7 @@
             <li class="active"><a href="#">Home</a></li>
             <li><a href="about">About This Data Set</a></li>
 	          <li><a href="quality">Data Quality</a></li>
-            <li><a href="references">References</a></li>
+            <li><a href="references">Blackboard Responses</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -38,7 +39,7 @@
       <div class="container">
         <div class="page-title">
           <h1>Byte 4 - Data Visualization</h1>
-          <h2>05-839 : Collecting, Analyzing And Interacting With Data</h2>
+          <h2>The Meteoritical Bulletin Database</h2>
         </div>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -53,20 +54,105 @@
             <li class="active"><a href="#">Home</a></li>
             <li><a href="about">About This Data Set</a></li>
             <li><a href="quality">Data Quality</a></li>
-            <li><a href="references">References</a></li>
+            <li><a href="references">Blackboard Responses</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 		<div id="outer-content">
 			<div id="content-panel">
-				
 
-			</div>
+        <p>Slide along the Year-Slider and notice the recorded trend of meteorites hitting the Earth since the year 56 BC, which marks the earliest confirmed historical record a meterote having fallen on the Earth. As you slide past today's date, you will be projected into a future assuming no more meteorites are recorded striking until at least AD 2100.</p>
+        
+
+        
+        <div id="year-control" class="input-control">
+          <label for="current-year" 
+                 style="text-align: center">
+                 Year : <span id="current-year-value" class="control-value"></span>
+          </label>
+          <input type="range" min="-100" max="2100" id="current-year">
+          <div class="input-scale-gradations">
+          </div>
+        </div>
+
+        
+        <div id="globe-viz" class="viz-graphics-content globe-viz-graphics-content" style="height:500px;width:100%">
+          
+          <svg id="defs">
+              <defs>
+                  <radialGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="5%" style="stop-color:#009c9c;stop-opacity:0.5" />
+                      <stop offset="100%" style="stop-color:#37474f;stop-opacity:0.8" />
+                  </radialGradient>
+                  <filter id="glow">
+                      <feColorMatrix type="matrix"
+                          values=
+                          "0 0 0 0   0
+                           0 0 0 0.9 0 
+                           0 0 0 0.9 0 
+                           0 0 0 1   0"/>
+                      <feGaussianBlur stdDeviation="5.5" result="coloredBlur"/>
+                      <feMerge>
+                          <feMergeNode in="coloredBlur"/>
+                          <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                  </filter>
+              </defs>
+          </svg>
+      </div>
+
+      <h3 id="visual-inference">Visual Inference</h3>
+        <p><b>Massiveness - </b>More massive meteorites are shown with larger diameters. Of course, this doesn't mean that diameters or areas of the circles within, are proportionate to the mass. (<a href="quality">Read More on Data Quality</a> or view another <a href="about">Meteorite-Mass-based Representation of the Data</a>)</p>
+        <p><b>Craters and Recency of Impact - </b>Depicting Meteorite sites as rings instead of solid circles distinctly helps in giving the analogy of craters. On the same lines, the impact made by meteorites causes a mark at the sites but this erodes with time. Likewise, while sliding along the timeline, the more recent meteorite impacts are shown more boldly with a higher alpha value and a catchy red fill color. As time passes, the colour and boldness fades just like the visibility of the mark left by the meteorite impact fades.</p>
+        <p><b>Temporality - </b>Dynamically Sliding along the timeline appends new meteorites that fell in the respective years, to the visualization. To prevent the transitions from looking abrupt, I have implented slow fading in and fading out as well as the premonition of meteorites that are going to strike in the next few years.</p>
+        <p><b>The Impact - </b>The impact, which is what needs to be most accurately conveyed in the visualization, is very noticeable as you see spots or blots suddenly appear on the globe as you slide along time, and can retrace to the exact year to deduce when the meteorite fell over that region.</p>
+
 		</div>
 		
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      
+      var i;
+      var $yearSlider = $(document).find('#year-control');
+      var $yearSliderGradations = $yearSlider.find('.input-scale-gradations');
+      var $yearInput = $yearSlider.find('input');
+      var minYear = parseInt($yearInput.attr('min'), 10);
+      var maxYear = parseInt($yearInput.attr('max'), 10);
+      var YEAR_STEP = (maxYear - minYear)/12;
+
+      for(i = minYear; i <= maxYear - YEAR_STEP; i += YEAR_STEP)  {
+        $yearSliderGradations.append($('<div class="scale-gradation"></div>'));
+      }
+
+      var childWidth = (100/$yearSliderGradations.children().length) + '%';
+
+      $yearSliderGradations.children().each(function(e) {
+        $(this).css('width', childWidth);
+      });
+
+      if(minYear < 0) {
+        $yearSliderGradations.children().first().text(-minYear + ' BC');
+      } else  {
+        $yearSliderGradations.children().first().text('AD ' + minYear);
+      }
+
+      
+      $yearSliderGradations.children().last().text('AD ' + maxYear);
+
+
+      $yearInput.val(maxYear);
+
+
+
+    </script>
+
+    <script src="d3/d3.min.js"></script>
+    <script src="d3/d3.custom.js"></script>
+    <script src="js/drawGlobe.js"></script>
 	</body>
 </html>

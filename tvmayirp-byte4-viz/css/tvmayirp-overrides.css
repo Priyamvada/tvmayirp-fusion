@@ -7,7 +7,60 @@ body {
   padding-left: 30px;
   padding-right: 30px;
   position: absolute;
-  top: 80px;
+  top: 120px;
+}
+#outer-content #content-panel p,
+#outer-content #content-panel li,
+#outer-content #content-panel ul {
+  font-family: 'Average', serif;
+  color: #606060;
+}
+#outer-content #content-panel .viz-graphics-content {
+  width: 100%;
+  height: 500px;
+  /*margin-bottom: 20px;*/
+}
+#outer-content #content-panel .input-control {
+  background-color: #000000;
+  padding: 10px;
+}
+#outer-content #content-panel .input-control label {
+  width: 100%;
+  font-weight: normal;
+}
+#outer-content #content-panel .input-control label .control-value {
+  color: #009c9c;
+  font-size: 20px;
+}
+#outer-content #content-panel .input-control .input-scale-gradations {
+  width: 100%;
+}
+#outer-content #content-panel .input-control .input-scale-gradations .scale-gradation {
+  display: inline-block;
+  border-right: solid #cacaca 0.75px;
+  height: 14px;
+  font-family: 'Average', serif;
+  text-align: right;
+  color: #cacaca;
+  padding: 10px;
+}
+#outer-content #content-panel .input-control .input-scale-gradations .scale-gradation:first-of-type {
+  border-left: solid #cacaca 0.75px;
+  text-align: left;
+}
+#outer-content .experiment-block {
+  padding-bottom: 5px;
+  border-bottom: solid #37474f 1px;
+}
+#outer-content h3 {
+  color: #37474f;
+}
+#outer-content h5 {
+  font-family: 'Oswald', sans-serif;
+}
+#outer-content .motivation {
+  font-family: 'Average', serif;
+  color: #37474f;
 }
 .project-header {
   width: 100%;
@@ -71,31 +124,17 @@ a.navbar-brand {
   padding-right: 10px;
 }
 h1 {
-  color: #ffffff;
-  font-size: 24px;
+  color: #cacaca;
+  font-size: 20px;
   margin-bottom: 0px;
   margin-top: 5px;
+  font-weight: normal;
 }
 .page-title h2 {
-  font-size: 100%;
   font-family: 'Average', serif;
-  color: #cacaca;
+  color: #ffffff;
   margin-bottom: 10px;
-  margin-top: 0px;
-}
-#outer-content .experiment-block {
-  padding-bottom: 5px;
-  border-bottom: solid #37474f 1px;
-}
-#outer-content h3 {
-  color: #37474f;
-}
-#outer-content h5 {
-  font-family: 'Oswald', sans-serif;
-}
-#outer-content .motivation {
-  font-family: 'Average', serif;
-  color: #37474f;
+  margin-top: 10px;
 }
 h3 {
   font-size: 18px;
@@ -110,6 +149,7 @@ p.text-note {
 }
 .legend-panel {
   text-align: center;
+  color: #37474f;
 }
 .legend-panel table {
   display: inline-table;
@@ -117,5 +157,6 @@ p.text-note {
 }
 .legend-key {
   padding-left: 10px;
+  text-align: left;
   font-size: 11px;
 }

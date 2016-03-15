@@ -1,0 +1,52 @@
+.globe-viz-graphics-content {
+    background-color: #444444;
+    background-image: -webkit-gradient(linear, left top, right bottom, from(#000), to(#333)); 
+    background-image: -webkit-linear-gradient(left top, #000, #333);
+    background-image: -moz-linear-gradient(left top, #000, #333);
+    overflow: hidden;
+}
+
+#info {
+    z-index: 10;
+}
+
+#defs {
+    height: 0;
+    width:0;
+}
+
+.frame {
+    fill: none;
+    pointer-events: all;
+}
+
+.feature {
+    fill: #37474f;
+    stroke: #78909c;
+    stroke-width: .5px;
+}
+
+.globe {
+    stroke: rgba(255, 255, 255, .5);
+    stroke-width: .25px;
+}
+
+.star {
+    fill: #fff;
+    stroke: rgba(255, 255, 255, .5);
+    stroke-width: .25px;
+}
+
+.impact-site    {
+    fill: none;
+    stroke: rgba(255, 255, 0, 1);
+    stroke-width: 2px;
+}
+
+.impact-site.recent-year    {
+    fill: #ff0000;
+}
+.impact-site.coming-year    {
+    fill: #ff8800;
+    stroke: none;
+}

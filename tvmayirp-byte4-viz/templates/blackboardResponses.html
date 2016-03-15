@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>tvmayirp Byte 4 - Visualization</title>
+
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/tvmayirp-overrides.css" rel="stylesheet">
+		<link href="css/special-objects.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Average' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top project-header">
+      <div class="container">
+      	<div class="page-title">
+      		<h1>Byte 4 - Data Visualization</h1>
+      		<h2>The Meteoritical Bulletin Database</h2>
+      	</div>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="about">About This Data Set</a></li>
+	          <li><a href="quality">Data Quality</a></li>
+            <li class="active"><a href="#">Blackboard Responses</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <nav class="navbar navbar-inverse navbar-fixed-top project-header">
+      <div class="container">
+        <div class="page-title">
+          <h1>Byte 4 - Data Visualization</h1>
+          <h2>The Meteoritical Bulletin Database</h2>
+        </div>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="about">About This Data Set</a></li>
+            <li><a href="quality">Data Quality</a></li>
+            <li class="active"><a href="#">Blackboard Responses</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+		<div id="outer-content">
+			<div id="content-panel">
+        <div class="page-header">
+				<h3>What is the URL for your working code?</h3>
+        <p><a href="/">http://tvmayirp-fusion-viz-byte4.appspot.com/</a></p>
+        </div>
+
+        <div class="page-header">
+        <h3>What narrative story does your visualization tell?</h3>
+        <p>I am visualizing meteorite impact data of 34,513 meteorites recorded over 2 millenia. Since only 1,189 of these meteorite records actually correspond to the time when they fell, I have filtered the data to capture the impact visualization of only these 1,189 meteorites. <a href="/#visual-inference">The dynamic visualization</a> for this byte gives arealistic picture of the impacts recorded through history. It is therefore expected to see a huge increase of impacts recorded in the last 2-3 centuries with modern equipment.
+          <ul>
+            <li><b>Time-line -</b> Here, I have implemented a time slider that helps filter meteor impacts based on the century in which they were either 'found' or actually 'fell'. The total number of impacts seen is accrued, rather than representing impacts strictly in the particular year. Hence, sliding the century slider gives an impression of the accrued impacts on the region over years.</li>
+
+            <li><b>Found vs Fell -</b> As discussed above, the purely "Found" meteorites have not been inclueded in the story as we are unsure of when they struck the Earth and cannot indicate a presence on the map relative to time.</li>
+
+            <li><b>Intentional False Translation of Mass of Meteorite -</b> It was found that metoerites ranged in mass from under a kilogram to over 600 metric tonnes. Heavier impacts have been shown with a larger diameter. The diameter changes as a function of the log_base-10 of the exponentially increasing meteorite masses. (Eg: under 1kg -> ~2.5-3.5 pixels, 1-10 kg -> ~3.5-4.5 pixels, ... 10-001-100,000 kgs -> ~7.5-8.5 pixels). This may not give a perfectly realistic visualization of the area affected by the impact on the Earth. However, it conveys the main distinction of massiveness as heavier meteorites are likely to have caused more massive and visible impacts on the Earth, without overwhelming the user with real-scale comparisions.</li>
+          </ul>
+        </p>
+        </div>
+
+        <div class="page-header">
+        <h3>What did you do to improve the visualization provided in the sample code?</h3>
+        <p>
+          <ul>
+            <li><b>Mass of Meteorites Recorded -</b> Instead of directly interpreting mass, I interpret it's log10 . This accounts for two facts about the mass data: Mass of meteorites has ranged from under a kilogram to over 60 metric tonnes The number of occurences of meteorites has not been related to their mass. Lighter meteorites have been found many more in number than the more massive ones. The number of meteorites is much more comparable when compared using log10 ranges. (log10(mass) --> under 0; 0 - 1; 1 - 2; ... 7 - 8)</li>
+            <li><b>Principles of Animation -</b> (<a href="/#visual-inference">Also refer to this section</a>)
+              <ul>
+                <li><b>Fade in and Fade Out - </b>Dark Orange filled circles of meteorites that are to strike in the coming 50 years slowly become visible fade into the visualize as one approaches their year of impact/ striking. Once the year of impact has passed for a given meteorite, the bold impact site marking gradually fades to half its opacity in the the next 50 years, removing the viewers focus from those meteorites</li>
+                <li><b>Focus -</b> Because it is important to have the object of focus (here, the meteorites striking in a particular year), well contrasted with respect to it's surroundings, the meteorite sites tun brightest and boldest, with solid bright yellow borders and crimson fill, at the instant when the year of their impact is crossed. Meteorites belonging to all the other time phases are dimmer (50% opacity) at this point.</li>
+                <li><b>Anticipation and Follow Through - </b>The actual event is marked by sharp boldening of the impact site as described in the above point. 50 years prior to reaching this point on the timeline, a filled Dark Orange circle without a border fades in, creating anticipation of the meteorite impact. The impact moment is denoted by the dark orange turning to bright crimson and the circular marker being outlined by a thick bright bold yellow border. The follow through happens by these impact sites slowly fading out to 50% opacity over the next 100 years on the timeline. Anticipation is briefer than follow-through to prevent presenting an overload of visual information before the actual impact.</li>
+              </ul>
+            </li>
+          </ul>
+        </p>
+      </div>
+
+			</div>
+		</div>
+		
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

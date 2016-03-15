@@ -14,7 +14,7 @@
       <div class="container">
       	<div class="page-title">
       		<h1>Byte 4 - Data Visualization</h1>
-      		<h2>05-839 : Collecting, Analyzing And Interacting With Data</h2>
+      		<h2>The Meteoritical Bulletin Database</h2>
       	</div>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -29,7 +29,7 @@
             <li><a href="/">Home</a></li>
             <li class="active"><a href="#">About This Data Set</a></li>
 	          <li><a href="quality">Data Quality</a></li>
-            <li><a href="references">References</a></li>
+            <li><a href="references">Blackboard Responses</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -38,7 +38,7 @@
       <div class="container">
         <div class="page-title">
           <h1>Byte 4 - Data Visualization</h1>
-          <h2>05-839 : Collecting, Analyzing And Interacting With Data</h2>
+          <h2>The Meteoritical Bulletin Database</h2>
         </div>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -53,14 +53,57 @@
             <li><a href="/">Home</a></li>
             <li class="active"><a href="#">About This Data Set</a></li>
             <li><a href="quality">Data Quality</a></li>
-            <li><a href="references">References</a></li>
+            <li><a href="references">Blackboard Responses</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 		<div id="outer-content">
 			<div id="content-panel">
-				
+
+
+        <div id="meteorite-impact-map" class="viz-graphics-content">
+          <iframe width="100%" height="500" scrolling="no" frameborder="no" src="https://www.google.com/fusiontables/embedviz?q=select+col6%3E%3E0+from+1vDXVDIqGOUSg2XTwLRVngPUvG0ar87P51aa6E87Q&amp;viz=MAP&amp;h=false&amp;lat=33.00671985621704&amp;lng=73.13937007812501&amp;t=1&amp;z=4&amp;l=col6%3E%3E0&amp;y=2&amp;tmplt=2&amp;hml=TWO_COL_LAT_LNG"></iframe>
+        </div>
+        <div class="legend-panel"><b>Figure 1: </b>Geo-coded Data from my "Merge of meteoritessize and Legend_meteors" Fusion Table; Meteorite sites have been colour coded with custom icons - lighter coloured locations refer to light meteorites while the Red locations with 'H' indicate the heaviest meterites (> 1 Metric Tonne in mass). Classification by weight has been done based on the log of the data because the count of meteorites showed an inverse exponential relationship with the mass of meteorite bing considered.</div>
+
+        <div class="container theme-showcase" role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+          <div class="page-header">
+            <h2>About the Meteoritical Bulletin Database</h2>
+            <h3>Accountability</h3>
+            <p>The primary function of <a href="http://www.lpi.usra.edu/meteor/about.php">the Meteoritical Bulletin Database</a>  is to provide authoritative information about meteorite names. The correct spelling, complete with punctuation and diacritical marks, of all known meteorites recognized by the Meteoritical Society may be found in this compilation. Official abbreviations for many meteorites are documented as well. The database also contains status information for meteorites with provisional names, and listings for specimens of doubtful origin and pseudometeorites.</p>
+            <p>In addition, this database is a clearinghouse for basic information about each meteorite, including the classification, place and year of discovery, whether if was observed to fall, references to catalogues in which the meteorite is described, and known synonyms that may be encountered in the literature. A seconday purpose of this database is to provide an interface to map services for the display of geographic information about meteorites.</p>
+
+            <h3>Where did this data come from?</h3>
+            <p>The primary source of information in this database is the <a href="http://www.nhm.ac.uk/our-science/data/metcat/">Catalogue of Meteorites</a>. It is considered the authoritative source of information on meteorite names up to the time of its last publication (2002). The Catalogue of Meteorites is the world taxonomic database of all meteorite falls and finds. (<a href="http://www.nhm.ac.uk/our-science/data/metcat/#sthash.pcGFTcDH.dpuf"> Read More >> </a>) </p>
+            <p>Data from the Catalogue have been supplemented by the more recent compilation in "<a href="http://www.lpi.usra.edu/meteor/notes.php?note=9">MetBase</a>" (v7.1, 2005). The data is regularly updated with issues of the Meteoritical Bulletin that post-date MetBase 7.1, provides information on the most recent meteorite names approved by the Nomenclature Committee.</p>
+
+            <h3>Who has access to it?</h3>
+            <p>This Dataset provides an interface to map services for the display of geographic information about meteorites. Two are currently implemented here:
+              <ul>
+                <li>If the user has installed the free NASA program <a href="http://worldwind.arc.nasa.gov/">World Wind</a>, links are provided for each meteorite to zoom the program to the find location.</li>
+                <li>The database also provides links to the <a href="http://maps.google.com/">Google Maps service</a> for the display of find locations.</li>
+              </ul>
+            </p>
+          </div>
+
+          <div class="page-header">
+            <h2>References</h2>
+            <ol>
+              <li>My Fusion Table : <a href="https://www.google.com/fusiontables/embedviz?viz=GVIZ&t=TABLE&q=select+col8%3E%3E0%2C+col0%3E%3E0%2C+col1%3E%3E0%2C+col2%3E%3E0%2C+col3%3E%3E0%2C+col4%3E%3E0%2C+col5%3E%3E0%2C+col6%3E%3E0%2C+col7%3E%3E0%2C+col1%3E%3E1+from+1vDXVDIqGOUSg2XTwLRVngPUvG0ar87P51aa6E87Q&containerId=googft-gviz-canvas">Merge of meteoritessize and Legend_meteors</a></li>
+              <li>The Meteoritical Bulletin DB : <a href="http://www.lpi.usra.edu/meteor/about.php">http://www.lpi.usra.edu/meteor/about.php</a></li>
+              <li>The Catalogue of Meteorites : <a href="http://www.nhm.ac.uk/our-science/data/metcat/">http://www.nhm.ac.uk/our-science/data/metcat/</a></li>
+              <li>Visualization Tool used was Mike Bostock's <a href="https://github.com/d3/d3-geo-projection">d3-geo-projection</a></li>
+
+            </ol>
+          </div>
+
+
+
+
+        </div>
 
 			</div>
 		</div>
