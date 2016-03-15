@@ -20,6 +20,9 @@ body {
   height: 500px;
   /*margin-bottom: 20px;*/
 }
+#outer-content #content-panel .viz-container {
+  width: 100%;
+}
 #outer-content #content-panel .input-control {
   background-color: #000000;
   padding: 10px;
